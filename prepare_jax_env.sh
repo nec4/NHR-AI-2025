@@ -10,8 +10,8 @@ source ~/.bashrc
 
 # create and activate jax env
 mamba activate base
-mamba create -n jax python=3.11 -y
-mamba activate jax
+mamba create -n nhr_jax python=3.11 -y
+mamba activate nhr_jax
 pip install jax[cuda]
 
 # grab git repo and instal pythpc
@@ -37,7 +37,7 @@ for platform in cpu gpu; do
 #SBATCH --gres=gpu:a100:1
 
 module load cuda/12.1.1
-conda activate jax
+mamba activate nhr_jax
 
 sub_dir=NHR-AI-2025/
 
