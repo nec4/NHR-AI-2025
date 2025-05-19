@@ -117,7 +117,7 @@ fit:
         class_path: pytorch_hpc.pl.pl_data.TorchvisionDataModule
         init_args:
             dataset_name: "FashionMNIST"
-            root_dir: ${work_dir}/pytorch_datasets
+            root_dir: ${WORK}/pytorch_datasets
             splits_fn: null
             train_dataloader_opts:
                 batch_size: 512
