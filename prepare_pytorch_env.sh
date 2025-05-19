@@ -5,6 +5,7 @@ module load cuda/11.8
 
 sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
+mamba init bash
 source ~/.bashrc
 
 # create and activate pytorch env
