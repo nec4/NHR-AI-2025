@@ -54,6 +54,9 @@ If you are on a login node, you can submit a SLURM job using the provided jobscr
 sbatch cli_submit_gpu.sh
 ```
 
+### Troubleshooting
+If something fails, you can run `bash clean_envs.sh` and do some troubleshooting. This removes the two install environments, the local FashionMNIST datasets, and the test/experiment results in `pytorch_tests` and `jax_tests`. 
+
 # ⚠️🚨 IMPORTANT🚨 ⚠️
 ------------------
 
@@ -76,4 +79,4 @@ unset __mamba_setup
 
 This sets your Python installation to the one that we have created everytime you open a new shell on the FAU cluster. We recommend that you remove these lines after the course concludes to avoid future issues with Python modules provided by FAU. 
 
-This can be done easily by running `mamba_clean.sh`: `bash mamba_clean.sh`
+This can be done easily by running `clean_bashr.sh`: `bash clean_bashrc.sh`
