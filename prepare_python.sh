@@ -2,8 +2,7 @@
 
 module purge
 
-sub_dir=nhr_grad_school_2025
-work_dir=${WORK}${sub_dir}
+sub_dir=NHR-AI-2025
 
 # grab Miniforge
 cd $work_dir
