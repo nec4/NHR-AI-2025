@@ -12,6 +12,7 @@ source ~/.bashrc
 mamba activate base
 mamba create -n nhr_pytorch python=3.11 -y
 mamba activate nhr_pytorch
+mamba install pip
 
 # grab git repo and instal pythpc
 git clone https://github.com/Ruunyox/pytorch-hpc ${WORK}/pytorch-hpc
