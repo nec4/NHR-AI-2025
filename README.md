@@ -12,9 +12,7 @@ They will also download the FashionMNIST dataset and prepare some submission scr
 4. `cd` to `NHR-AI-2025`
 5. If there is no conda installation on the system, source the Miniforge installation script: `source prepare_conda.sh`. Else, continue.
 6. Source the PyTorch environment setup script: `source prepare_pytorch_env.sh`
-7. Run the PyTorch dataset script: `mamba activate pytorch; python prepare_pytorch_data.py`
-8. Source the JAX environment setup script: `source prepare_jax_env.sh`
-9. Run the JAX dataset script: `mamba activate jax; python prepare_jax_data.py`
+7. Source the JAX environment setup script: `source prepare_jax_env.sh`
 
 This will setup up a local Python installation in your $WORK directory, create independent environments for PyTorch and JAX installations, and download/prepare necessary datasets. After running all the preparation scripts you can check that things are set up properly:
 
