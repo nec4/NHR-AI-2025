@@ -12,6 +12,7 @@ source ~/.bashrc
 mamba activate base
 mamba create -n nhr_jax python=3.11 -y
 mamba activate nhr_jax
+mamba install pip
 pip install jax[cuda]
 
 # grab git repo and instal pythpc
