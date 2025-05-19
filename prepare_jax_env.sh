@@ -19,6 +19,7 @@ git clone https://github.com/Ruunyox/jax-hpc ${WORK}/jax-hpc
 pip install ${WORK}/jax-hpc 
 
 mkdir ${work_dir}/jax_tests
+
 me=$(whoami)
 
 # Generate initial configs and
