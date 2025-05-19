@@ -3,32 +3,31 @@
 module purge
 module load cuda/12.1.1
 
-sub_dir=nhr_grad_school_2025
+sub_dir=NHR-AI-2025
+work_dir=${WORK}/${sub_dir}
+mamba init bash
+source ~/.bashrc
 
-cd $WORK/$sub_dir
-# create and activate pytorch env
-source $HOME/$sub_dir.bashrc
+# create and activate jax env
 mamba activate base
 mamba create -n jax python=3.11 -y
 mamba activate jax
 pip install jax[cuda]
 
 # grab git repo and instal pythpc
-git clone https://github.com/Ruunyox/jax-hpc
-cd jax-hpc
-pip install .
-cd $WORK/$sub_dir
+git clone https://github.com/Ruunyox/jax-hpc ${WORK}/jax-hpc
+pip install ${WORK}/jax-hpc 
 
-mkdir jax_tests
+mkdir ${work_dir}/jax_tests
 me=$(whoami)
 
 # Generate initial configs and
 
 for platform in cpu gpu; do
-    slurm_template="$WORK/$sub_dir/jax_tests/cli_submit_${platform}.sh"
+    slurm_template="${work_dir}/jax_tests/cli_submit_${platform}.sh"
     cat << EOF >> "$slurm_template"
 #! /bin/bash
-#SBATCH -J jax_cli_test_1_${platform}
+#SBATCH -J jax_cli_test_${platform}
 #SBATCH -o ./fashion_mnist_${platform}/cli_test_${platform}.out
 #SBATCH --time=00:30:00
 #SBATCH --partition=a100
@@ -39,10 +38,9 @@ for platform in cpu gpu; do
 module load cuda/12.1.1
 conda activate jax
 
-sub_dir=nhr_grad_school_2025
+sub_dir=NHR-AI-2025/
 
-export TFDS_DATA_DIR="/home/woody/ihpc/${me}/${sub_dir}/jax_datasets"
-#export XLA_FLAGS=--xla_${platform}_cuda_data_dir=/sw/compiler/cuda/11.8/a100/install
+export TFDS_DATA_DIR="${WORK}/jax_datasets"
 export JAX_PLATFORM_NAME=${platform}
 export PYTHONUNBUFFERED=on
 
@@ -53,7 +51,7 @@ done
 # Generate YAMLs
 
 for platform in cpu gpu; do
-    slurm_template="$WORK/$sub_dir/jax_tests/config_${platform}.sh"
+    slurm_template="${work_dir}/jax_tests/config_${platform}.sh"
     cat << EOF >> "$slurm_template"
 cache_data: false
 profiler:
