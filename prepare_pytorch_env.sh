@@ -17,6 +17,9 @@ mamba activate nhr_pytorch
 git clone https://github.com/Ruunyox/pytorch-hpc ${WORK}/pytorch-hpc
 pip install ${WORK}/pytorch-hpc 
 
+# grab data
+python ${work_dir}/prepare_pytorch_data.py
+
 me=$(whoami)
 
 mkdir ${work_dir}/pytorch_tests
@@ -39,7 +42,7 @@ module load cuda/11.8
 
 mamba activate pytorch
 me=$(whoami)
-tensorboard_dir=${work_dir}/pytorch_tests/fashion_mnist_1_${platform}/tensorboard
+tensorboard_dir=${work_dir}/pytorch_tests/fashion_mnist_${platform}/tensorboard
 
 srun pythpc --config fashion_mnist_fcc_${platform}.yaml fit --trainer.profiler=lightning.pytorch.profilers.AdvancedProfiler --trainer.profiler.dirpath="${tensorboard_dir}" --trainer.profiler.filename="prof"
 EOF
