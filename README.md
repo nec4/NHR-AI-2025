@@ -1,9 +1,9 @@
-#Overview
+# Overview
 ---------
 These scripts will automatically set up local python environment for `PyTorch` and `JAX` for deep learning on HPC environments.
 They will also download the FashionMNIST dataset and prepare some submission scripts/YAML configs.
 
-#Instructions:
+# Instructions:
 --------------
 
 1. Spawn a new terminal/shell using the JupyterHub launcher
@@ -31,7 +31,7 @@ To switch between environments, simply run:
 mamba activate YOUR_DESIRED_ENVIRONMENT
 ```
 
-⚠️🚨 IMPORTANT🚨 ⚠️
+# ⚠️🚨 IMPORTANT🚨 ⚠️
 
 Initializing `mamba/conda`  adds the following lines to your `$HOME/.bashrc`:
 
