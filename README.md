@@ -21,8 +21,8 @@ This will setup up a local Python installation in your $WORK directory, create i
   Name     Active  Path
 ──────────────────────────────────────────────────────────────────────
   base             /home/woody/ihpc/ihpc153h/miniforge3
-  jax      *       /home/woody/ihpc/ihpc153h/miniforge3/envs/jax
-  pytorch          /home/woody/ihpc/ihpc153h/miniforge3/envs/pytorch
+  nhr_jax      *       /home/woody/ihpc/ihpc153h/miniforge3/envs/jax
+  nhr_pytorch          /home/woody/ihpc/ihpc153h/miniforge3/envs/pytorch
 
 To switch between environments, simply run:
 
