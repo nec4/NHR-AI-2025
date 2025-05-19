@@ -3,26 +3,22 @@
 module purge
 module load cuda/11.8
 
-sub_dir=nhr_grad_school_2025
-
-# grab Miniforge
+sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
-cd ${work_dir}
 source ~/.bashrc
 
 # create and activate pytorch env
 mamba activate base
-mamba create -n pytorch python=3.11 -y
-mamba activate pytorch
+mamba create -n nhr_pytorch python=3.11 -y
+mamba activate nhr_pytorch
 
 # grab git repo and instal pythpc
-git clone https://github.com/Ruunyox/pytorch-hpc
-cd pytorch-hpc
-pip install .
+git clone https://github.com/Ruunyox/pytorch-hpc ${WORK}/pytorch-hpc
+pip install ${WORK}/pytorch-hpc 
 
 me=$(whoami)
 
-mkdir pytorch_tests
+mkdir ${work_dir}/pytorch_tests
 
 # Generate initial configs and 
 
