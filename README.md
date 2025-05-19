@@ -38,7 +38,7 @@ srun pythpc --config fashion_mnist_fcc_gpu.yaml fit
 ```
 If you are on a login node, you can submit a SLURM job using the provided jobscript:
 ```
-sbatch cli_submit_${platform}.sh
+sbatch cli_submit_gpu.sh
 ```
 
 # ⚠️🚨 IMPORTANT🚨 ⚠️
