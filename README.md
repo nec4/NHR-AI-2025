@@ -5,13 +5,16 @@ They will also download the FashionMNIST dataset and prepare some submission scr
 
 # Instructions:
 --------------
+### Setup
 1. Spawn a new terminal/shell using the JupyterHub launcher
 2. Run `echo $'export http_proxy=http://proxy.nhr.fau.de:80\nexport https_proxy=http://proxy.nhr.fau.de:80' >> ~/.bashrc; source ~/.bashrc`
 3. `cd` to your `$WORK` directory
 4. Run `git clone https://github.com/nec4/NHR-AI-2025` to clone this repository
 5. `cd` to `NHR-AI-2025`
-6. Source the PyTorch environment setup script: `source prepare_pytorch_env.sh` (maybe grab some ☕)
-7. Source the JAX environment setup script: `source prepare_jax_env.sh` (maybe grab another ☕)
+### PyTorch
+7. Run the PyTorch environment setup script: `bash prepare_pytorch_env.sh` (maybe grab some ☕)
+### JAX
+9. Run the JAX environment setup script: `bash prepare_jax_env.sh` (maybe grab another ☕)
 
 This will setup up a local Python installation in your $WORK directory, create independent environments for PyTorch and JAX installations, and download/prepare necessary datasets. Each `source` call should take 4-5 min (unfortunately 🤷‍♂️). After running all the preparation scripts you can check that things are set up properly:
 
