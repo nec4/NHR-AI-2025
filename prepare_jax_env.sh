@@ -40,7 +40,7 @@ me=$(whoami)
 
 for platform in cpu gpu; do
     slurm_template="${work_dir}/jax_tests/cli_submit_${platform}.sh"
-    cat << EOF >> "$slurm_template"
+    cat << EOF > "$slurm_template"
 #! /bin/bash
 #SBATCH -J jax_cli_test_${platform}
 #SBATCH -o ./fashion_mnist_${platform}/cli_test_${platform}.out
@@ -70,7 +70,7 @@ done
 
 for platform in cpu gpu; do
     slurm_template="${work_dir}/jax_tests/config_${platform}.yaml"
-    cat << EOF >> "$slurm_template"
+    cat << EOF > "$slurm_template"
 cache_data: false
 profiler: null
 logger:
