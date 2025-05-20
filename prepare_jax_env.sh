@@ -1,5 +1,8 @@
 #! /bin/bash
 
+export http_proxy=http://proxy.nhr.fau.de:80
+export https_proxy=http://proxy.nhr.fau.de:80
+
 module purge
 module load cuda/12.1.1
 
