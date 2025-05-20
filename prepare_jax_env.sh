@@ -84,7 +84,7 @@ model:
             activation: jax.nn.relu
             hidden_layers: [512,256]
 fit:
-    num_epochs: 100
+    num_epochs: 20
     val_freq: 1
 optimizer:
     name: optax.adam
