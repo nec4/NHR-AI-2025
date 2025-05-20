@@ -39,7 +39,7 @@ mkdir -p ${work_dir}/pytorch_tests
 
 for platform in cpu gpu; do
     slurm_template="${work_dir}/pytorch_tests/cli_submit_${platform}.sh"
-    cat << EOF >> "$slurm_template"
+    cat << EOF > "$slurm_template"
 #! /bin/bash
 #SBATCH -J pyt_cli_test_${platform}
 #SBATCH -o ./fashion_mnist_${platform}/cli_test_${platform}.out
@@ -67,7 +67,7 @@ done
 
 for platform in cpu gpu; do
     slurm_template="${work_dir}/pytorch_tests/fashion_mnist_fcc_${platform}.yaml"
-    cat << EOF >> "$slurm_template"
+    cat << EOF > "$slurm_template"
 fit:
     seed_everything: 42 # When using DDP, with train
     trainer:
