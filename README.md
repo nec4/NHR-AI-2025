@@ -78,6 +78,6 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 ```
 
-This sets your Python installation to the one that we have created everytime you open a new shell on the FAU cluster. We recommend that you remove these lines after the course concludes to avoid future issues with Python modules provided by FAU. 
+This sets your Python installation to the one that we have created everytime you open a new shell on the FAU cluster. We recommend that you remove these lines after the course concludes to avoid future issues with Python modules provided by FAU. This can be done easily by running `clean_bashrc.sh`: `bash clean_bashrc.sh`
 
-This can be done easily by running `clean_bashr.sh`: `bash clean_bashrc.sh`
+If you find that something has gone horribly wrong, you can start from the top after running `bash clean_envs.sh`, which will remove the two environments, as well as all dowloaded data and 3rd party software (`pytorch-hpc` and `jax-hpxc`).
