@@ -1,6 +1,6 @@
 # Overview
 ----------
-These scripts will automatically set up local python environment for `PyTorch` and `JAX` for deep learning on HPC environments.
+These scripts will automatically set up local python environments for `PyTorch` and `JAX` for deep learning on HPC environments.
 They will also download the FashionMNIST dataset and prepare some submission scripts/YAML configs.
 
 # Instructions:
