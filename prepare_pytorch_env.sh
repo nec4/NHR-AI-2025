@@ -68,7 +68,7 @@ fit:
     seed_everything: 42 # When using DDP, with train
     trainer:
         default_root_dir: fashion_mnist_${platform}
-        max_epochs: 100
+        max_epochs: 20
         max_time: null
         profiler: 'advanced'
         accelerator: '${platform}'
