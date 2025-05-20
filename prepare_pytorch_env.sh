@@ -51,7 +51,7 @@ for platform in cpu gpu; do
 module load python/3.12-conda
 module load cuda/11.8
 
-conda activate pytorch
+conda activate nhr_pytorch
 me=$(whoami)
 tensorboard_dir=${work_dir}/pytorch_tests/fashion_mnist_${platform}/tensorboard
 
