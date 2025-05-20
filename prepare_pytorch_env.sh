@@ -9,14 +9,14 @@ module load cuda/11.8
 
 sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
-mamba init bash
+conda init bash
 source ~/.bashrc
 
 # create and activate pytorch env
-mamba activate base
-mamba create -n nhr_pytorch python=3.11 -y
-mamba activate nhr_pytorch
-mamba install pip
+conda activate base
+conda create -n nhr_pytorch python=3.11 -y
+conda activate nhr_pytorch
+conda install pip
 
 # grab git repo and instal pythpc
 git clone https://github.com/Ruunyox/pytorch-hpc ${WORK}/pytorch-hpc
@@ -43,9 +43,10 @@ for platform in cpu gpu; do
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:a40:1
 
+module load python/3.12-conda
 module load cuda/11.8
 
-mamba activate pytorch
+conda activate pytorch
 me=$(whoami)
 tensorboard_dir=${work_dir}/pytorch_tests/fashion_mnist_${platform}/tensorboard
 
