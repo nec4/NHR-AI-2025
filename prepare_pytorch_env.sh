@@ -138,15 +138,15 @@ fit:
             root_dir: ${WORK}/pytorch_datasets
             splits_fn: null
             train_dataloader_opts:
-                batch_size: 512
+                batch_size: 2048
                 shuffle: True
                 num_workers: 2
             val_dataloader_opts:
-                batch_size: 512
+                batch_size: 2048
                 shuffle: False
                 num_workers: 2
             test_dataloader_opts:
-                batch_size: 512
+                batch_size: 2048
                 shuffle: False
             transform:
                 - ToTensor
