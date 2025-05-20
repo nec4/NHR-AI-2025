@@ -67,12 +67,19 @@ done
 
 for platform in cpu gpu; do
     slurm_template="${work_dir}/pytorch_tests/fashion_mnist_fcc_${platform}.yaml"
+    
+    if [[ "$platform" == "cpu" ]]; then
+        max_epochs=15
+    else
+        max_epochs=40
+    fi
+    
     cat << EOF > "$slurm_template"
 fit:
     seed_everything: 42 # When using DDP, with train
     trainer:
         default_root_dir: fashion_mnist_${platform}
-        max_epochs: 40
+        max_epochs: ${max_epochs}
         max_time: null
         profiler: null
         accelerator: '${platform}'
@@ -138,15 +145,15 @@ fit:
             root_dir: ${WORK}/pytorch_datasets
             splits_fn: null
             train_dataloader_opts:
-                batch_size: 2048
+                batch_size: 512
                 shuffle: True
-                num_workers: 2
+                num_workers: 4
             val_dataloader_opts:
-                batch_size: 2048
+                batch_size: 512
                 shuffle: False
-                num_workers: 2
+                num_workers: 4
             test_dataloader_opts:
-                batch_size: 2048
+                batch_size: 512
                 shuffle: False
             transform:
                 - ToTensor
