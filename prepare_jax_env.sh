@@ -9,14 +9,14 @@ module load cuda/12.1.1
 
 sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
-mamba init bash
+conda init bash
 source ~/.bashrc
 
 # create and activate jax env
-mamba activate base
-mamba create -n nhr_jax python=3.11 -y
-mamba activate nhr_jax
-mamba install pip
+conda activate base
+conda create -n nhr_jax python=3.11 -y
+conda activate nhr_jax
+conda install pip
 pip install jax[cuda]
 
 # grab git repo and instal pythpc
@@ -45,7 +45,8 @@ for platform in cpu gpu; do
 #SBATCH --gres=gpu:a100:1
 
 module load cuda/12.1.1
-mamba activate nhr_jax
+module load python/3.12-conda
+conda activate nhr_jax
 
 sub_dir=NHR-AI-2025/
 
