@@ -45,6 +45,8 @@ for platform in cpu gpu; do
 #SBATCH -o ./fashion_mnist_${platform}/cli_test_${platform}.out
 #SBATCH --time=00:30:00
 #SBATCH --partition=a40
+#SBATCH --reservation=nhr-gradschool
+#SBATCH --exclusive
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:a40:1
