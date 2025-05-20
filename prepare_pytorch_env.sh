@@ -30,7 +30,7 @@ python ${work_dir}/prepare_pytorch_data.py
 
 me=$(whoami)
 
-mkdir ${work_dir}/pytorch_tests
+mkdir -p ${work_dir}/pytorch_tests
 
 # Generate initial configs and 
 
