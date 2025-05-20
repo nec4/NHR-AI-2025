@@ -27,6 +27,7 @@ git clone https://github.com/Ruunyox/jax-hpc ${WORK}/jax-hpc
 pip install ${WORK}/jax-hpc 
 pip install matplotlib
 pip install jupyter
+python -m ipykernel install --user --name nhr_jax
 
 # grab data
 python ${work_dir}/prepare_jax_data.py
