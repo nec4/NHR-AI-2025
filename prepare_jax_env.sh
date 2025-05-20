@@ -5,7 +5,7 @@ export https_proxy=http://proxy.nhr.fau.de:80
 
 module purge
 module load python/3.12-conda
-module load cuda/11.3.1
+module load cuda/11.8
 
 sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
@@ -71,10 +71,7 @@ for platform in cpu gpu; do
     slurm_template="${work_dir}/jax_tests/config_${platform}.yaml"
     cat << EOF >> "$slurm_template"
 cache_data: false
-profiler:
-    logdir: "fashion_mnist_${platform}"
-    start: 10
-    stop : 10
+profiler: null
 logger:
     logdir: "fashion_mnist_${platform}"
 platform: ${platform}
