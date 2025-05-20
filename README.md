@@ -31,26 +31,13 @@ mamba activate YOUR_DESIRED_ENVIRONMENT
 # Tests
 --------------
 ### Pytorch:
-If you are on a compute node, you can run the singel GPU test directly:
-```
-cd $WORK/NHR-AI-2025/pytorch_tests
-mamba activate nhr_pytorch
-srun pythpc --config fashion_mnist_fcc_gpu.yaml fit
-```
-If you are on a login node, you can submit a SLURM job using the provided jobscript:
+You can submit a SLURM job using the provided jobscript:
 ```
 sbatch cli_submit_gpu.sh
 ```
 
 ### JAX:
-If you are on a compute node, you can run the singel GPU test directly:
-```
-cd $WORK/NHR-AI-2025/jax_tests
-mamba activate nhr_jax
-export TFDS_DATA_DIR="${WORK}/jax_datasets"
-srun jaxhpc --config config_gpu.yaml
-```
-If you are on a login node, you can submit a SLURM job using the provided jobscript:
+You can submit a SLURM job using the provided jobscript:
 ```
 sbatch cli_submit_gpu.sh
 ```
