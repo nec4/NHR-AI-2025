@@ -12,6 +12,9 @@ work_dir=${WORK}/${sub_dir}
 conda init bash
 source ~/.bashrc
 
+mkdir -p ${WORK}/conda-pkgs
+conda config --add pkgs_dirs ${WORK}/conda-pkgs
+
 # create and activate jax env
 conda activate base
 conda create -n nhr_jax python=3.11 -y
