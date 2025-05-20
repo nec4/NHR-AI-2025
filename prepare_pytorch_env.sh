@@ -26,6 +26,7 @@ git clone https://github.com/Ruunyox/pytorch-hpc ${WORK}/pytorch-hpc
 pip install ${WORK}/pytorch-hpc 
 pip install jupyter
 pip install matplotlib
+python -m ipykernel install --user --name nhr_pytorch
 
 # grab data
 python ${work_dir}/prepare_pytorch_data.py
