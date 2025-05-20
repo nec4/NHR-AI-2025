@@ -71,11 +71,11 @@ for platform in cpu gpu; do
     cat << EOF >> "$slurm_template"
 cache_data: false
 profiler:
-    logdir: "log_cli_${platform}"
+    logdir: "fashion_mnist_${platform}"
     start: 10
     stop : 10
 logger:
-    logdir: "log_cli_${platform}"
+    logdir: "fashion_mnist_${platform}"
 platform: ${platform}
 model:
     model:
