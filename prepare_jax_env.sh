@@ -52,7 +52,7 @@ for platform in cpu gpu; do
 
 module load cuda/12.1.1
 module load python/3.12-conda
-conda init bash
+conda init bash; source ~/.bashrc
 conda activate nhr_jax
 
 sub_dir=NHR-AI-2025/
