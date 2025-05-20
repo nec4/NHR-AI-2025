@@ -66,7 +66,7 @@ done
 # Generate YAMLs
 
 for platform in cpu gpu; do
-    slurm_template="${work_dir}/jax_tests/config_${platform}.sh"
+    slurm_template="${work_dir}/jax_tests/config_${platform}.yaml"
     cat << EOF >> "$slurm_template"
 cache_data: false
 profiler:
