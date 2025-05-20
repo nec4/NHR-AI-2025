@@ -26,7 +26,7 @@ pip install ${WORK}/jax-hpc
 # grab data
 python ${work_dir}/prepare_jax_data.py
 
-mkdir ${work_dir}/jax_tests
+mkdir -p ${work_dir}/jax_tests
 
 me=$(whoami)
 
