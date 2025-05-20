@@ -24,6 +24,8 @@ conda install pip
 # grab git repo and instal pythpc
 git clone https://github.com/Ruunyox/pytorch-hpc ${WORK}/pytorch-hpc
 pip install ${WORK}/pytorch-hpc 
+pip install jupyter
+pip install matplotlib
 
 # grab data
 python ${work_dir}/prepare_pytorch_data.py
