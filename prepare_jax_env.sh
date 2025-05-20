@@ -5,7 +5,7 @@ export https_proxy=http://proxy.nhr.fau.de:80
 
 module purge
 module load python/3.12-conda
-module load cuda/12.1.1
+module load cuda/12.4.1
 
 sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
@@ -49,7 +49,7 @@ for platform in cpu gpu; do
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:a100:1
 
-module load cuda/12.1.1
+module load cuda/12.4.1
 module load python/3.12-conda
 conda activate nhr_jax
 
