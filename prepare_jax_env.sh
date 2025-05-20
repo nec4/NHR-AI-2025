@@ -47,7 +47,6 @@ for platform in cpu gpu; do
 #SBATCH --time=00:30:00
 #SBATCH --partition=a100
 #SBATCH --reservation=nhr-gradschool
-#SBATCH --exclusive
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:a100:1
