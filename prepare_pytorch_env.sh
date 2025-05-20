@@ -7,6 +7,9 @@ module purge
 module load python/3.12-conda
 module load cuda/11.8
 
+mkdir -p ${WORK}/conda-pkgs
+conda config --add pkgs_dirs ${WORK}/conda-pkgs
+
 sub_dir=NHR-AI-2025
 work_dir=${WORK}/${sub_dir}
 conda init bash
