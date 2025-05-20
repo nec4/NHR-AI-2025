@@ -25,6 +25,8 @@ pip install jax[cuda]
 # grab git repo and instal pythpc
 git clone https://github.com/Ruunyox/jax-hpc ${WORK}/jax-hpc
 pip install ${WORK}/jax-hpc 
+pip install matplotlib
+pip install jupyter
 
 # grab data
 python ${work_dir}/prepare_jax_data.py
