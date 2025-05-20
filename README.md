@@ -10,9 +10,8 @@ They will also download the FashionMNIST dataset and prepare some submission scr
 3. `cd` to your `$WORK` directory
 4. Run `git clone https://github.com/nec4/NHR-AI-2025` to clone this repository
 5. `cd` to `NHR-AI-2025`
-6. If there is no conda installation on the system, source the Miniforge installation script: `source prepare_conda.sh`. Else, continue.
-7. Source the PyTorch environment setup script: `source prepare_pytorch_env.sh`
-8. Source the JAX environment setup script: `source prepare_jax_env.sh`
+6. Source the PyTorch environment setup script: `source prepare_pytorch_env.sh`
+7. Source the JAX environment setup script: `source prepare_jax_env.sh`
 
 This will setup up a local Python installation in your $WORK directory, create independent environments for PyTorch and JAX installations, and download/prepare necessary datasets. After running all the preparation scripts you can check that things are set up properly:
 
