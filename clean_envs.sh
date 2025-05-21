@@ -1,5 +1,9 @@
 # /bin/bash
 
+module load python
+
+conda init
+source ~/.bashrc
 conda activate base
 conda env remove -n nhr_pytorch -y
 conda env remove -n nhr_jax -y
