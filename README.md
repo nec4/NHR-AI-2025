@@ -8,9 +8,10 @@ They will also download the FashionMNIST dataset and prepare some submission scr
 ### Setup
 1. Spawn a new terminal/shell using the JupyterHub launcher
 2. Run `echo $'export http_proxy=http://proxy.nhr.fau.de:80\nexport https_proxy=http://proxy.nhr.fau.de:80' >> ~/.bashrc; source ~/.bashrc`
-3. `cd` to your `$WORK` directory
-4. Run `git clone https://github.com/nec4/NHR-AI-2025` to clone this repository
-5. `cd` to `NHR-AI-2025`
+3. Make a symlink to your `$WORK`: `ln -s $WORK ~/work`
+4. `cd` to your `$WORK` directory
+5. Run `git clone https://github.com/nec4/NHR-AI-2025` to clone this repository
+6. `cd` to `NHR-AI-2025`
 ### PyTorch
 Run the PyTorch environment setup script: `bash prepare_pytorch_env.sh` (maybe grab some ☕)
 ### JAX
