@@ -18,7 +18,7 @@ Run the PyTorch environment setup script: `bash prepare_pytorch_env.sh` (maybe g
 Run the JAX environment setup script: `bash prepare_jax_env.sh` (maybe grab another ☕)
 
 ---------------
-This will setup up a local Python installation in your $WORK directory, create independent environments for PyTorch and JAX installations, and download/prepare necessary datasets. Each `source` call should take 4-5 min (unfortunately 🤷‍♂️). After running all the preparation scripts you can check that things are set up properly:
+This will setup up a local Python installation in your $WORK directory, create independent environments for PyTorch and JAX installations, and download/prepare necessary datasets. Each `prepare_*` script should take 4-5 min to run. After running the preparation scripts you can check that things are set up properly:
 
 ```
 (jax) YOUR_USERNAME@YOUR_HOST$ mamba info --envs
