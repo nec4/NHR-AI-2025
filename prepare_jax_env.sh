@@ -82,7 +82,7 @@ model:
         init_args:
             out_dim: 10
             activation: jax.nn.relu
-            hidden_layers: [512,256]
+            hidden_layers: [4096, 2048, 1024, 512]
 fit:
     num_epochs: 20
     val_freq: 1
