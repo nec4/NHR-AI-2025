@@ -59,7 +59,7 @@ conda activate nhr_pytorch
 me=$(whoami)
 tensorboard_dir=${work_dir}/pytorch_tests/fashion_mnist_${platform}/tensorboard
 
-srun pythpc --config config_${platform}.yaml fit --trainer.profiler=lightning.pytorch.profilers.AdvancedProfiler --trainer.profiler.dirpath="${tensorboard_dir}" --trainer.profiler.filename="prof"
+srun pythpc --config config_${platform}.yaml fit 
 EOF
 done
 
@@ -83,7 +83,7 @@ fit:
         max_time: null
         profiler: null
         accelerator: '${platform}'
-        strategy: auto
+        strategy: ddp
         devices: 1
         num_nodes: 1
         precision: 32
