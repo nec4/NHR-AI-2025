@@ -59,14 +59,14 @@ conda activate nhr_pytorch
 me=$(whoami)
 tensorboard_dir=${work_dir}/pytorch_tests/fashion_mnist_${platform}/tensorboard
 
-srun pythpc --config fashion_mnist_fcc_${platform}.yaml fit --trainer.profiler=lightning.pytorch.profilers.AdvancedProfiler --trainer.profiler.dirpath="${tensorboard_dir}" --trainer.profiler.filename="prof"
+srun pythpc --config config_${platform}.yaml fit --trainer.profiler=lightning.pytorch.profilers.AdvancedProfiler --trainer.profiler.dirpath="${tensorboard_dir}" --trainer.profiler.filename="prof"
 EOF
 done
 
 # Generate YAML template
 
 for platform in cpu gpu; do
-    slurm_template="${work_dir}/pytorch_tests/fashion_mnist_fcc_${platform}.yaml"
+    slurm_template="${work_dir}/pytorch_tests/config_${platform}.yaml"
     
     if [[ "$platform" == "cpu" ]]; then
         max_epochs=15
@@ -133,7 +133,7 @@ fit:
                     out_dim: 10
                     activation:
                         class_path: torch.nn.ReLU
-                    hidden_layers: [512, 256, 128]
+                    hidden_layers: [4096, 2048, 1024, 512]
             loss_function:
                 class_path: torch.nn.CrossEntropyLoss
                 init_args:
